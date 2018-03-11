@@ -1,4 +1,4 @@
-# Vue Typescript Electron Boilerplate
+# Vue SSR Typescript Boilerplate
 
 This template provide a boilerplate to getting started with Vuejs + SSR and Typescript.
 
