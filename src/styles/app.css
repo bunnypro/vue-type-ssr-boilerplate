@@ -1,0 +1,41 @@
+@import "tailwindcss/css/preflight.css";
+@import "tailwindcss/css/utilities.css";
+
+@import "./Components/*.css";
+
+#app {
+    @apply flex h-screen items-center flex-col p-4;
+}
+
+nav {
+    @apply mb-4;
+}
+
+main {
+    @apply flex h-screen justify-center flex-col;
+}
+
+.highlight {
+    @apply text-5xl text-grey-darker;
+}
+
+/* purgecss ignore */
+.animate-p3s {
+    transition: .3s all ease;
+}
+
+/* purgecss ignore */
+.animate-p5s {
+    transition: .5s all ease;
+}
+
+/* purgecss ignore */
+.fade-left-leave-active {
+  opacity: 0;
+}
+
+/* purgecss ignore */
+.fade-left-enter {
+  opacity: 0;
+  transform: translate(1rem, 0);
+}
