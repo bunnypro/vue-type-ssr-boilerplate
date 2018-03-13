@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production webpack --config=./build/webpack.prod.js --hide-modules --progress"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "vue-server-renderer": "^2.5.15"
   },
   "devDependencies": {
