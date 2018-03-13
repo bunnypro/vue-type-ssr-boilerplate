@@ -1,16 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
+const TscofigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const config = require('../config');
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-            '@Component': path.resolve(__dirname, '../src/Components'),
-            '@Page': path.resolve(__dirname, '../src/Pages')
+            'vue$': 'vue/dist/vue.esm.js'
         },
-        extensions: ['.css', '.js', '.ts', '.vue']
+        extensions: ['.css', '.js', '.ts', '.vue'],
+        plugins: [
+            new TscofigPathsPlugin()
+        ]
     },
     module: {
         rules: [
