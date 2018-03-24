@@ -1,8 +1,6 @@
-# Vue SSR Typescript Boilerplate
+# Vue SSR Typescript Starter Kit
 
-This template provide a boilerplate to getting started with Vuejs + SSR and Typescript.
-
-Why not vue-cli template ? because vue-cli template will be replaced with @vue/cli (vue-cli@3.x) which is so much easier to getting started, but ssr is not supported out of the box yet.
+This starter kit provide a boilerplate to getting started with Vuejs + SSR and Typescript.
 
 ## Notice !
 
