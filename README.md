@@ -4,7 +4,7 @@ This starter kit provide a boilerplate to getting started with Vuejs + SSR and T
 
 ## Notice !
 
-I'm not creating Tests yet and some dependencies is not in production ready (eg. some webpack@4.x plugins is still in beta), so don't use at production or use at your own risk.
+I'm not providing support for Tests yet and some dependencies is not in production ready (eg. some webpack@4.x plugins is still in beta), so don't use at production or use at your own risk.
 
 ## Getting Started
 
