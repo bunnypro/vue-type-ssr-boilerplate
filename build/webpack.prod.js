@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob-all');
 const merge = require('webpack-merge');
+const Webpackbar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgeCssPlugin = require('purgecss-webpack-plugin');
@@ -15,7 +16,7 @@ class TailwindExtractor {
     }
 }
 
-const extractCssRule = {
+const productionCofig = {
     module: {
         rules: [
             {
@@ -36,7 +37,7 @@ const extractCssRule = {
     ]
 };
 
-const clientConfig = merge(baseClientConfig, extractCssRule, {
+const clientConfig = merge(baseClientConfig, productionCofig, {
     mode: 'production',
     output: {
         path: config.clientOutputPath,
@@ -60,7 +61,11 @@ const clientConfig = merge(baseClientConfig, extractCssRule, {
         new OptimizeCssAssetsPlugin({
             cssProcessorOptions: { safe: true, map: { inline: false } }
         }),
-        new VueSSRClientPlugin()
+        new VueSSRClientPlugin(),
+        new Webpackbar({
+            name: 'Client',
+            color: 'green'
+        })
     ],
     optimization: {
         splitChunks: {
@@ -80,7 +85,14 @@ const clientConfig = merge(baseClientConfig, extractCssRule, {
     }
 });
 
-const serverConfig = merge(baseServerConfig, extractCssRule);
+const serverConfig = merge(baseServerConfig, productionCofig, {
+    plugins: [
+        new Webpackbar({
+            name: 'Server',
+            color: 'orange'
+        })
+    ]
+});
 
 module.exports = [
     clientConfig,
