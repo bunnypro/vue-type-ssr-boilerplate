@@ -1,5 +1,6 @@
-@import "tailwindcss/css/preflight.css";
-@import "tailwindcss/css/utilities.css";
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @import "./Components/*.css";
 
