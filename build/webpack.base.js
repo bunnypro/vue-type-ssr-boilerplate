@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const TscofigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const config = require('../config');
 
 module.exports = {
@@ -34,6 +35,7 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(config.env)
-        })
+        }),
+        new VueLoaderPlugin(),
     ]
 };
